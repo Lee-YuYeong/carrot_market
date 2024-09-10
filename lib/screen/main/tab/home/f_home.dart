@@ -14,6 +14,7 @@ class HomeFragment extends ConsumerStatefulWidget {
 
 class _HomeFragmentState extends ConsumerState<HomeFragment> {
   final scrollController = ScrollController();
+  String title = "플러터동";
 
   @override
   void initState() {
@@ -31,11 +32,29 @@ class _HomeFragmentState extends ConsumerState<HomeFragment> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      controller: scrollController,
-      itemBuilder: (context, index) => ProductPostItem(postList[index]),
-      itemCount: postList.length,
-      separatorBuilder: (context, index) => const Padding(padding: EdgeInsets.symmetric(horizontal: 15), child: Line()),
+    return Column(
+      children: [
+        AppBar(
+          title: PopupMenuButton<String>(
+            onSelected: (value) {
+              setState(() {
+                title = value;
+              });
+            },
+            itemBuilder: (context) => ["다트동", "앱동"].map((e) => PopupMenuItem(value: e,child: Text(e))).toList(),
+            child: Text(title),
+          ),
+        ),
+        Expanded(
+          child: ListView.separated(
+            padding: const EdgeInsets.only(bottom: 100),
+            controller: scrollController,
+            itemBuilder: (context, index) => ProductPostItem(postList[index]),
+            itemCount: postList.length,
+            separatorBuilder: (context, index) => const Padding(padding: EdgeInsets.symmetric(horizontal: 15), child: Line()),
+          ),
+        ),
+      ],
     );
   }
 }
