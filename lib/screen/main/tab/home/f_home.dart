@@ -1,3 +1,4 @@
+import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/entity/dummies.dart';
 import 'package:fast_app_base/screen/main/fab/w_floating_daangn_button.riverpod.dart';
 import 'package:fast_app_base/screen/main/tab/home/w_product_post_item.dart';
@@ -30,9 +31,11 @@ class _HomeFragmentState extends ConsumerState<HomeFragment> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return ListView.separated(
       controller: scrollController,
-      children: postList.map((e) => ProductPostItem(e)).toList()
+      itemBuilder: (context, index) => ProductPostItem(postList[index]),
+      itemCount: postList.length,
+      separatorBuilder: (context, index) => const Padding(padding: EdgeInsets.symmetric(horizontal: 15), child: Line()),
     );
   }
 }
