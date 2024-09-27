@@ -24,7 +24,7 @@ class PostDetailScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final productPost = ref.watch(ProductPostProvider(id));
     return productPost.when(
-      data: (data) => _PostDetail(data.simpleProductPost, productPost: data), 
+      data: (data) => _PostDetail(simpleProductPost ?? data.simpleProductPost, productPost: data), 
       error: (error, trace) => Text("에러 발생"), 
       loading: () => simpleProductPost != null ? _PostDetail(simpleProductPost!) : Center(child: CircularProgressIndicator())
     );
@@ -62,6 +62,7 @@ class _PostDetail extends HookWidget {
                           }).toList(),
                         ),
 
+                        if (simpleProductPost.product.images.length > 1)
                         Align(
                           alignment: Alignment.bottomCenter,
                           child: SmoothPageIndicator(
