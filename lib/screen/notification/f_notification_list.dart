@@ -1,5 +1,4 @@
 import 'package:fast_app_base/screen/notification/provider/notofication_provider.dart';
-import 'package:fast_app_base/screen/notification/vo/vo_notification_dummies.dart';
 import 'package:fast_app_base/screen/notification/w_notification_item.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
