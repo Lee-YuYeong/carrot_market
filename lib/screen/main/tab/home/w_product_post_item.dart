@@ -14,7 +14,7 @@ class ProductPostItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Tap(
       onTap: () {
-        Nav.push(PostDetailScreen(post.id, simpleProductPost: post));
+        Nav.push(PostDetailScreen(post.id, simpleProductPost: post), durationMs: 800);
       },
       child: Stack(
         children: [
@@ -25,7 +25,9 @@ class ProductPostItem extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: CachedNetworkImage(imageUrl: post.product.images[0], width: 150),
+                  child: Hero(
+                    tag: '${post.id}_${post.product.images[0]}',
+                    child: CachedNetworkImage(imageUrl: post.product.images[0], width: 150)),
                 ),
                 const Width(10),
                 Expanded(

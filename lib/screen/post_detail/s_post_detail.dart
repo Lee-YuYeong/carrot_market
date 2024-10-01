@@ -58,7 +58,9 @@ class _PostDetail extends HookWidget {
                         PageView(
                           controller: pageController,
                           children: simpleProductPost.product.images.map((url) {
-                            return CachedNetworkImage(imageUrl: url, fit: BoxFit.fill,);
+                            return Hero(
+                              tag: '${simpleProductPost.id}_$url',
+                              child: CachedNetworkImage(imageUrl: url, fit: BoxFit.fill,));
                           }).toList(),
                         ),
 

@@ -22,4 +22,4 @@ final post1 = SimpleProductPost(1, product1.user, product1, "글의 내용입니
 final post2 = SimpleProductPost(2,product2.user, product2, "글의 내용입니다", const Address("광주 광역시 주소", "동명동"), 20, 30, DateTime.now().subtract(55.minutes));
 final post3 = SimpleProductPost(3, product3.user, product3, "글의 내용입니다", const Address("서울 특별시 주소", "한강진동"), 5, 1, DateTime.now().subtract(5.hours));
 
-final postList = [post1, post2, post3, post1, post2, post3];
+final postList = [post1, post2, post3];

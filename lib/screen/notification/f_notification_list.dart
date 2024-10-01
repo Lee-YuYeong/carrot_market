@@ -11,7 +11,7 @@ class NotificationFragment extends HookConsumerWidget {
     final list = ref.watch(notificationProvider);
 
     return list == [] 
-    ? const Center(child: CircularProgressIndicator(),) 
+    ? const Center(child: CircularProgressIndicator()) 
     : ListView(
       children: [
         ...list.map((item) => NotificationItemWidget(notification: item, onTap: () {})).toList()
