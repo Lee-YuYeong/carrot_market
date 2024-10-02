@@ -3,6 +3,7 @@ import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/common/route/transition/fade_transition_page.dart';
 import 'package:fast_app_base/common/theme/custom_theme_app.dart';
 import 'package:fast_app_base/common/widget/w_round_button.dart';
+import 'package:fast_app_base/entity/post/vo_simple_product_post.dart';
 import 'package:fast_app_base/screen/main/s_main.dart';
 import 'package:fast_app_base/screen/main/tab/tab_item.dart';
 import 'package:fast_app_base/screen/post_detail/s_post_detail.dart';
@@ -105,7 +106,12 @@ class AppState extends State<App> with  WidgetsBindingObserver {
             path: ':postId',
             builder: (BuildContext context, GoRouterState state) {
               final String postId = state.pathParameters['postId']!;
+              if (state.extra != null) {
+              final post = state.extra as SimpleProductPost;
+              return PostDetailScreen(simpleProductPost: post, int.parse(postId));
+              } else {
               return PostDetailScreen(int.parse(postId));
+              }
             },
           ),
         ],
