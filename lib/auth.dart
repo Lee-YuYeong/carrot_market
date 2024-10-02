@@ -40,7 +40,7 @@ class DaangnAuth extends ChangeNotifier {
     }
     // Go to /books if the user is signed in and tries to go to /signin.
     else if (signedIn && signingIn) {
-      return '/books';
+      return '/';
     }
 
     // no redirect
