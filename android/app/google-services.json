@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "719955090524",
+    "project_id": "daandn-app",
+    "storage_bucket": "daandn-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719955090524:android:0eb1c68c8b403651f89a99",
+        "android_client_info": {
+          "package_name": "com.example.fast_app_base"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkfRDgNIEdxZXvbon6CPRNiPyf6jqz5ns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
