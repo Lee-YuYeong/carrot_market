@@ -51,8 +51,8 @@ class _PostDetail extends HookWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 300, // context.deviceHeight
-                    width: 610, // context.deviceWidth
+                    height: context.deviceWidth,
+                    width: context.deviceWidth,
                     child: Stack(
                       children: [
                         PageView(
