@@ -1,5 +1,6 @@
 import 'package:fast_app_base/auth.dart';
 import 'package:fast_app_base/common/common.dart';
+import 'package:fast_app_base/common/fcm/fcm_manager.dart';
 import 'package:fast_app_base/common/route/transition/fade_transition_page.dart';
 import 'package:fast_app_base/common/theme/custom_theme_app.dart';
 import 'package:fast_app_base/common/widget/w_round_button.dart';
@@ -18,6 +19,8 @@ class App extends StatefulWidget {
   static const defaultTheme = CustomTheme.dark;
   static bool isForeground = true;
   static final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey = GlobalKey();
+  // static final GlobalKey<NavigatorState> navigatorkey = GlobalKey();
+
 
   const App({super.key});
 
@@ -34,6 +37,8 @@ class AppState extends State<App> with  WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
+    FcmManager.requestPermission();
+    FcmManager.initialize();
     WidgetsBinding.instance.addObserver(this);
   }
 
