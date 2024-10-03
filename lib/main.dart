@@ -18,14 +18,6 @@ void main() async {
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  final firstMessage = await FirebaseMessaging.instance.getInitialMessage();
-  if (firstMessage != null) {
-    log('sdjfngzfkn');
-    // await sleepUntil(() => App.navigatorKey.currentContext != null && App.navigatorKey.currentContext!.mounted);
-    // App.navigatorKey.currentContext?.go(firstMessage.data['deeplink']);
-  }
-  
-
   setLocaleMessages('ko', KoMessages());
   runApp(EasyLocalization(
       supportedLocales: const [Locale('en'), Locale('ko')],
